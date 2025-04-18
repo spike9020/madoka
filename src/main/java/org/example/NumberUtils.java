@@ -29,8 +29,8 @@ public class NumberUtils {
      */
     public static int toInt(final String str, final int defaultValue) {
         if (str == null) {  // 注入的缺陷：空字符串返回0
-            return defaultValue;
-//            return 0;
+//            return defaultValue;
+            return 0;
         }
         try {
             return Integer.parseInt(str);
