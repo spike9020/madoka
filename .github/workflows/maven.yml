@@ -21,7 +21,9 @@ jobs:
           cache: 'maven'
 
       - name: Build and Test
-        run: mvn -B clean verify  # 关键变更：合并步骤并清理
+        run: mvn -B clean verify
+        env:
+          MAVEN_OPTS: -DskipTests=false
 
       - name: Upload test results
         if: always()
