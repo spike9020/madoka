@@ -17,19 +17,14 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
-          distribution: 'temurin' # 或者 'corretto', 'zulu' 等
+          distribution: 'temurin'
           cache: 'maven'
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Build and Test
+        run: mvn -B clean verify  # 关键变更：合并步骤并清理
 
-      # 可选：运行测试
-      - name: Run tests
-        run: mvn -B test
-
-      # 可选：上传测试报告
       - name: Upload test results
-        if: always() # 即使测试失败也上传
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results

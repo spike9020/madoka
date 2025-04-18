@@ -9,7 +9,6 @@ public class NumberUtilsJUnitTest {
     
     @Test
     public void testToInt() {
-        int a = 1 / 0;
         // 正常数字字符串
         assertEquals(123, NumberUtils.toInt("123", 0));
         
