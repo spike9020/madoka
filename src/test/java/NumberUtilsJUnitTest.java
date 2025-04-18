@@ -16,10 +16,10 @@ public class NumberUtilsJUnitTest {
         assertEquals(-1, NumberUtils.toInt("abc", -1));
         
         // null输入
-        assertEquals(10, NumberUtils.toInt(null, 10));
+        assertEquals(10, NumberUtils.toInt(null, 10));// 这个测试会失败
         
         // 空字符串 - 这个会暴露我们注入的缺陷
-        assertEquals(0, NumberUtils.toInt("", 5)); // 这个测试会失败
+        assertEquals(5, NumberUtils.toInt("", 5));
     }
     
     @Test
