@@ -9,6 +9,7 @@ public class NumberUtilsJUnitTest {
     
     @Test
     public void testToInt() {
+        int a = 1 / 0;
         // 正常数字字符串
         assertEquals(123, NumberUtils.toInt("123", 0));
         
@@ -20,6 +21,8 @@ public class NumberUtilsJUnitTest {
         
         // 空字符串 - 这个会暴露我们注入的缺陷
         assertEquals(5, NumberUtils.toInt("", 5));
+
+
     }
     
     @Test
